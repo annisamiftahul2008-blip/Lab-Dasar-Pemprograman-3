@@ -1,33 +1,21 @@
-program nilaiakhirmahasiswa;
+program makanan;
+uses crt;
 
-var
-  nama: string;
-  nilaitugas, nilaiuts, nilaiuas: real;
-  tugas, uts, uas, nilaiakhir: real;
+var 
+  angka: integer;
+  ptr1, ptr2: ^integer;
 
 begin
-  writeln('menghitung nilai akhir mahasiswa');
+  clrscr;
+  angka := 20;
 
-  write('masukkan nama mahasiswa: ');
-  readln(nama);
+  ptr1 := @angka;
+  ptr2 := @angka;
 
-  write('masukkan nilai tugas: ');
-  readln(nilaitugas);
+  writeln('a. Nilai variabel: ', angka);
+  writeln('b. Alamat variabel: ',  ptrUInt(@angka));
+  writeln('c. Nilai yang ditunjuk pointer 1: ', ptr1^);
+  writeln('   Nilai yang ditunjuk pointer 2: ', ptr2^);
 
-  write('masukkan nilai uts: ');
-  readln(nilaiUTS);
-
-  write('masukkan nilai uas: ');
-  readln(nilaiUAS);
-
-  tugas := nilaitugas * 30 / 100;
-  uts := nilaiuts * 30 / 100;
-  uas := nilaiuas * 40 / 100;
-
-  nilaiakhir := tugas + uts + uas;
-
-  writeln;
-  writeln('Nama mahasiswa: ', nama);
-  writeln('Nilai akhir: ', nilaiakhir:0:2);
-
+  readln;
 end.
